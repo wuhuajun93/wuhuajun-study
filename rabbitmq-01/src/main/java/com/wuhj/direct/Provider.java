@@ -18,7 +18,7 @@ public class Provider {
     
         Channel channel = connection.createChannel();
         String exchangeName = "logs_direct";
-        //通过通道声明交换机  参数1：交换机名称  参数2：direct 路由模式
+        //通过通道声明交换机  参数1：交换机名称  参数2：type 路由模式
         channel.exchangeDeclare(exchangeName, "direct");
         //发送消息
         String routingKey = "tr";

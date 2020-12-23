@@ -19,7 +19,10 @@ public class CustomerTwo {
         Channel channel = connection.createChannel();
         channel.basicQos(1);
         channel.queueDeclare("work", true, false, false, null);
-        
+        //消费消息
+        //参数1：队列名称
+        //参数2：自动确认 true 开启自动确认 false 关闭自动确认
+        //参数3：消费时回调接口
         channel.basicConsume("work", false, new DefaultConsumer(channel){
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
