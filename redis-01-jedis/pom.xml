@@ -8,5 +8,25 @@
     <artifactId>redis-01-jedis</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!--导入依赖-->
+
+    <dependencies>
+        <dependency>
+        <groupId>redis.clients</groupId>
+        <artifactId>jedis</artifactId>
+        <version>3.2.0</version>
+    </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>jrebleoom</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
+    </dependencies>
 
 </project>
