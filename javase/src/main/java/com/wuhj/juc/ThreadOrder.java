@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Collectors;
@@ -75,7 +76,8 @@ public class ThreadOrder {
     }
     
     public static void main(String[] args) {
-        
+        ConcurrentHashMap<String, String> map1 = new ConcurrentHashMap();
+        ThreadLocal threadLocal = new ThreadLocal();
         ThreadOrder threadOrder = new ThreadOrder();
     
         System.out.println("********************************");

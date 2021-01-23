@@ -25,7 +25,7 @@ public class StreamAPITest2 {
         //anyMath(Predicate p)——检查是否至少匹配一个元素
         //练习：是否存在员工的工资大于10000
         boolean anyMatch = employees.stream().anyMatch(e -> e.getSalary() > 10000);
-        System.out.println(allMatch);
+        System.out.println(anyMatch);
         //noneMatch(Predicate p)——检查是否没有匹配的元素
         //练习：是否存在员工姓 雷
         boolean noneMatch = employees.stream().noneMatch(e -> e.getName().contains("雷"));

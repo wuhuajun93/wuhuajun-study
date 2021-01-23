@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * 自旋锁
+ * 手写自旋锁
  */
 public class SpinLockDemo {
     
@@ -14,7 +14,7 @@ public class SpinLockDemo {
     public void myLock(){
         Thread thread = Thread.currentThread();
         System.out.println(Thread.currentThread().getName() + "\t come in O(n_n)O");
-        
+        //如果没有线程则初始化一个
         while (!atomicReference.compareAndSet(null, thread)){
         
         }
@@ -22,6 +22,7 @@ public class SpinLockDemo {
     
     public void myUnlock(){
         Thread thread = Thread.currentThread();
+        //如果有一个线程则清空
         atomicReference.compareAndSet(thread, null);
         System.out.println(Thread.currentThread().getName() + "\t invoked myUnlock()");
     }

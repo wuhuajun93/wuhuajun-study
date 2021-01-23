@@ -11,10 +11,9 @@ class MyCache{
     
     private ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
     
+    //写数据
     public void put(String key, Object value){
-        
         readWriteLock.writeLock().lock();
-    
         try {
             System.out.println(Thread.currentThread().getName() + "\t ---写入数据" + key);
             try {
@@ -31,8 +30,8 @@ class MyCache{
         }
     }
     
+    //读数据
     public void get(String key){
-        
         readWriteLock.readLock().lock();
         try {
             System.out.println(Thread.currentThread().getName() + "\t读取数据");

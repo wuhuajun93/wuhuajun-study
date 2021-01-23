@@ -1,8 +1,6 @@
 package com.wuhj.juc;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -20,7 +18,6 @@ public class NotSafeDemo {
                 System.out.println(map);
             }, String.valueOf(i)).start();
         }
-        
         
         
     }
